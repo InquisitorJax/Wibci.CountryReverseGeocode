@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wibci.CountryReverseGeocode", "Wibci.CountryReverseGeocode\Wibci.CountryReverseGeocode.csproj", "{F1ED891B-4F28-408C-89FE-0AA63B27698C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wibci.CountryReverseGeocode.Tests", "Wibci.CountryReverseGeocode.Tests\Wibci.CountryReverseGeocode.Tests.csproj", "{BAFEF4D7-A084-43C8-9ED8-F3802082E5BE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F1ED891B-4F28-408C-89FE-0AA63B27698C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1ED891B-4F28-408C-89FE-0AA63B27698C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1ED891B-4F28-408C-89FE-0AA63B27698C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1ED891B-4F28-408C-89FE-0AA63B27698C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAFEF4D7-A084-43C8-9ED8-F3802082E5BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAFEF4D7-A084-43C8-9ED8-F3802082E5BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAFEF4D7-A084-43C8-9ED8-F3802082E5BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAFEF4D7-A084-43C8-9ED8-F3802082E5BE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

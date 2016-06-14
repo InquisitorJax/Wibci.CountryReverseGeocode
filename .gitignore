@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/packages
+/Wibci.CountryReverseGeocode/bin/Debug
+/Wibci.CountryReverseGeocode/obj/Debug
+/Wibci.CountryReverseGeocode.Tests/bin/Debug
+/Wibci.CountryReverseGeocode.Tests/obj/Debug
