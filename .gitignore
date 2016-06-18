@@ -7,3 +7,8 @@
 /Wibci.CountryReverseGeocode/obj/Debug
 /Wibci.CountryReverseGeocode.Tests/bin/Debug
 /Wibci.CountryReverseGeocode.Tests/obj/Debug
+/Wibci.CountryReverseGeocode/bin/Release
+/Wibci.CountryReverseGeocode/obj/Release
+/Wibci.CountryReverseGeocode.Tests/bin/Release
+/Wibci.CountryReverseGeocode.Tests/obj/Release
+/.vs/slnCountryReverseGeocode/v14
