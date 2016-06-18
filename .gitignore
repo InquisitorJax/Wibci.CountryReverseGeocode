@@ -7,3 +7,8 @@
 /Wibci.CountryReverseGeocode/obj/Debug
 /Wibci.CountryReverseGeocode.Tests/bin/Debug
 /Wibci.CountryReverseGeocode.Tests/obj/Debug
+/Sample/packages
+/Sample/Wibci.CountryReverseGeocode.Xamarin/Wibci.CountryReverseGeocode.Xamarin/obj/Debug
+/Sample/Wibci.CountryReverseGeocode.Xamarin/Wibci.CountryReverseGeocode.Xamarin.Droid/obj/Debug
+/Sample/Wibci.CountryReverseGeocode.Xamarin/Wibci.CountryReverseGeocode.Xamarin.iOS/obj/iPhone/Debug
+/Sample/Wibci.CountryReverseGeocode.Xamarin/Wibci.CountryReverseGeocode.Xamarin.UWP/obj/x86/Debug
