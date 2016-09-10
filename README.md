@@ -9,3 +9,7 @@ https://www.nuget.org/packages/Wibci.CountryReverseGeocode/
 
 See test project for sample usage
 sample xamarin project still in progress
+
+## Release Notes
+1.1.0
+ - Fixed reversed latitude and longitude values
