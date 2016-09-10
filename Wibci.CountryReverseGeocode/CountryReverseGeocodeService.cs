@@ -65,7 +65,7 @@ namespace Wibci.CountryReverseGeocode
             var locationData = coordinates[0];
             foreach (var locationItem in locationData)
             {
-                locations.Add(new GeoLocation { Latitude = locationItem[0], Longitude = locationItem[1] });
+                locations.Add(new GeoLocation { Latitude = locationItem[1], Longitude = locationItem[0] });
             }
 
             bool found = location.IsInPolygon(locations);
