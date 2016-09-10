@@ -4,4 +4,8 @@ All code is offline - no api calls to map services necessary
 
 C# port of https://github.com/totemstech/country-reverse-geocoding
 
+## Nuget Package
+https://www.nuget.org/packages/Wibci.CountryReverseGeocode/
+
 See test project for sample usage
+sample xamarin project still in progress
