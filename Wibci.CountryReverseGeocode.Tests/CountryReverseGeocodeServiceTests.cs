@@ -33,7 +33,7 @@ namespace Wibci.CountryReverseGeocode.Tests
 
             //Assert
             Assert.NotNull(info, "Expected to find area information");
-            Assert.AreEqual("Angola", info.Name, "Expected to return 'Angola' as state");
+            Assert.AreEqual("Angola", info.Name, "Expected to return 'Angola' as a country");
         }
 
         [Test]
@@ -63,6 +63,21 @@ namespace Wibci.CountryReverseGeocode.Tests
 
             //Assert
             Assert.Null(info, "Expected not to find area information for coordinate outside the states");
+        }
+
+        [Test]
+        [Ignore("Currently polygon for russia seems to be broken for this coordinates")]
+        public void GetCountry_ForRussiaBug_FindsCountry()
+        {
+            //Arrange
+            GeoLocation location = new GeoLocation { Latitude = 50.064546, Longitude = 40.587502 };
+
+            //Act
+            var info = _service.FindCountry(location);
+
+            //Assert
+            Assert.NotNull(info, "Expected to find area information");
+            Assert.AreEqual("Russia", info.Name, "Expected to return 'Russia' as a country");
         }
 
         [Test]
