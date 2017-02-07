@@ -26,7 +26,7 @@ namespace Wibci.CountryReverseGeocode.Tests
         {
             //Arrange
             //Buco Zau -4.895250, 12.437329
-            GeoLocation angola = new GeoLocation { Latitude = 12.437329, Longitude = -4.895250 };
+            GeoLocation angola = new GeoLocation { Longitude = 12.437329, Latitude = -4.895250 };
 
             //Act
             var info = _service.FindCountry(angola);
@@ -41,7 +41,7 @@ namespace Wibci.CountryReverseGeocode.Tests
         {
             //Arrange
             //35.227575, 65.167173
-            GeoLocation afghanistan = new GeoLocation { Latitude = 65.167173, Longitude = 35.227575 };
+            GeoLocation afghanistan = new GeoLocation { Longitude = 65.167173, Latitude = 35.227575 };
 
             //Act
             var info = _service.FindCountry(afghanistan);
@@ -56,7 +56,7 @@ namespace Wibci.CountryReverseGeocode.Tests
         {
             //Arrange
             //Bering Sea
-            GeoLocation alaskaOcean = new GeoLocation { Latitude = -172.060482, Longitude = 62.510037 };
+            GeoLocation alaskaOcean = new GeoLocation { Longitude = -172.060482, Latitude = 62.510037 };
 
             //Act
             var info = _service.FindCountry(alaskaOcean);
@@ -85,7 +85,7 @@ namespace Wibci.CountryReverseGeocode.Tests
         {
             //Arrange
             //Savoonga Island
-            GeoLocation alaska = new GeoLocation { Latitude = -170.333949, Longitude = 63.431027 };
+            GeoLocation alaska = new GeoLocation { Longitude = -170.333949, Latitude = 63.431027 };
 
             //Act
             var info = _service.FindUsaState(alaska);
@@ -99,7 +99,7 @@ namespace Wibci.CountryReverseGeocode.Tests
         public void GetState_ForInsidePolygon_FindsState()
         {
             //Arrange
-            GeoLocation alabama = new GeoLocation { Latitude = -87.762676, Longitude = 34.305190 };
+            GeoLocation alabama = new GeoLocation { Longitude = -87.762676, Latitude = 34.305190 };
 
             //Act
             var info = _service.FindUsaState(alabama);
@@ -115,7 +115,7 @@ namespace Wibci.CountryReverseGeocode.Tests
             //Arrange
 
             //capetown
-            GeoLocation capetown = new GeoLocation { Latitude = 18.751451, Longitude = -33.855952 };
+            GeoLocation capetown = new GeoLocation { Longitude = 18.751451, Latitude = -33.855952 };
 
             //Act
             var info = _service.FindUsaState(capetown);
