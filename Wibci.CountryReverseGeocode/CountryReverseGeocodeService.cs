@@ -26,6 +26,16 @@ namespace Wibci.CountryReverseGeocode
             return FindAreaData(location, UsaStateData.DATA);
         }
 
+        //TODO: Check again if exposed via .NET Standard
+        //private string FetchCurrencySymbol(string threeLetterISO)
+        //{
+        //    string currencySymbol = null;
+
+        //    var regions = CultureInfo.GetCultures(CultureTypes.SpecificCultures).Select(x => new RegionInfo(x.LCID));
+
+        //    return currencySymbol;
+        //}
+
         private LocationInfo FindAreaData(GeoLocation location, List<string> jsonDataList)
         {
             LocationInfo retInfo = null;
@@ -72,6 +82,7 @@ namespace Wibci.CountryReverseGeocode
 
             if (found)
             {
+                //string currencySymbol = FetchCurrencySymbol(data.id);
                 retInfo = new LocationInfo(data.id, data.properties.name);
             }
 

@@ -1,5 +1,8 @@
 ﻿using NUnit.Framework;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Globalization;
+using System.Linq;
 using Wibci.CountryReverseGeocode.Models;
 
 namespace Wibci.CountryReverseGeocode.Tests
@@ -128,6 +131,27 @@ namespace Wibci.CountryReverseGeocode.Tests
         public void Setup()
         {
             _service = new CountryReverseGeocodeService();
+        }
+
+        [Test]
+        [Ignore("Figure a way to get currency from country")]
+        public void TestCultures()
+        {
+            //Arrange
+            //Buco Zau -4.895250, 12.437329
+            GeoLocation angola = new GeoLocation { Longitude = 12.437329, Latitude = -4.895250 };
+
+            //Act
+            var info = _service.FindCountry(angola);
+
+            var regions = CultureInfo.GetCultures(CultureTypes.SpecificCultures).Select(x => new RegionInfo(x.LCID)).OrderBy(y => y.ThreeLetterISORegionName);
+
+            foreach (var region in regions)
+            {
+                Debug.WriteLine(region.ThreeLetterISORegionName);
+            }
+
+            var currencySymbol = regions.FirstOrDefault(x => x.ThreeLetterISORegionName == info.Id);
         }
     }
 }

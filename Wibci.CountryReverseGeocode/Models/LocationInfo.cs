@@ -8,6 +8,7 @@
             Name = name;
         }
 
+        public string CurrencySymbol { get; set; }
         public string Id { get; private set; }
         public string Name { get; private set; }
     }
