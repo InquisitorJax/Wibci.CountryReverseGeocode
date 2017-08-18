@@ -68,8 +68,7 @@ namespace Wibci.CountryReverseGeocode.Tests
             Assert.Null(info, "Expected not to find area information for coordinate outside the states");
         }
 
-        [Test]
-        [Ignore("Currently polygon for russia seems to be broken for this coordinates")]
+        [Test]        
         public void GetCountry_ForRussiaBug_FindsCountry()
         {
             //Arrange
