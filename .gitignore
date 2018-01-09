@@ -11,9 +11,12 @@
 /Wibci.CountryReverseGeocode/obj/Release
 /Wibci.CountryReverseGeocode.Tests/bin/Release
 /Wibci.CountryReverseGeocode.Tests/obj/Release
-/.vs/slnCountryReverseGeocode/v14
+/.vs
 /Sample/packages
 /Sample/Wibci.CountryReverseGeocode.Xamarin/Wibci.CountryReverseGeocode.Xamarin/obj/Debug
 /Sample/Wibci.CountryReverseGeocode.Xamarin/Wibci.CountryReverseGeocode.Xamarin.Droid/obj/Debug
 /Sample/Wibci.CountryReverseGeocode.Xamarin/Wibci.CountryReverseGeocode.Xamarin.iOS/obj/iPhone/Debug
 /Sample/Wibci.CountryReverseGeocode.Xamarin/Wibci.CountryReverseGeocode.Xamarin.UWP/obj/x86/Debug
+/Sample/.vs/Wibci.CountryReverseGeocode.Xamarin/v14
+/Wibci.CountryReverseGeocode/obj
+/nuget
