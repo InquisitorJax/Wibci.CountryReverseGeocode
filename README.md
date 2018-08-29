@@ -13,3 +13,6 @@ sample xamarin project still in progress
 ## Release Notes
 1.1.0
  - Fixed reversed latitude and longitude values
+
+## License
+Distributed under the MIT License
