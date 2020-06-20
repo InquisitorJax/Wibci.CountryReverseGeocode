@@ -112,6 +112,22 @@ namespace Wibci.CountryReverseGeocode.Tests
         }
 
         [Test]
+        public void GetState_ForInsidePolygon_FindsState_California()
+        {
+            //California 
+
+            //Arrange
+            GeoLocation alabama = new GeoLocation { Longitude = -122.4404, Latitude = 37.78595 };
+
+            //Act
+            var info = _service.FindUsaState(alabama);
+
+            //Assert
+            Assert.NotNull(info, "Expected to find area information");
+            Assert.AreEqual("California", info.Name, "Expected to return 'California' as state");
+        }
+
+        [Test]
         public void GetState_ForOutsidePolygon_DoesNotFindState()
         {
             //Arrange
