@@ -20,3 +20,11 @@
 /Sample/.vs/Wibci.CountryReverseGeocode.Xamarin/v14
 /Wibci.CountryReverseGeocode/obj
 /nuget
+/SampleProject/.vs/WibciCountryStateGeocode.XamarinSample/DesignTimeBuild
+/SampleProject/.vs/WibciCountryStateGeocode.XamarinSample/v16/.suo
+/SampleProject/WibciCountryStateGeocode.XamarinSample/bin/Debug/netstandard2.0
+/SampleProject/WibciCountryStateGeocode.XamarinSample/obj
+/SampleProject/WibciCountryStateGeocode.XamarinSample.Android/bin/Debug
+/SampleProject/WibciCountryStateGeocode.XamarinSample.Android/obj
+/SampleProject/WibciCountryStateGeocode.XamarinSample.iOS/obj
+/SampleProject/WibciCountryStateGeocode.XamarinSample.UWP/obj

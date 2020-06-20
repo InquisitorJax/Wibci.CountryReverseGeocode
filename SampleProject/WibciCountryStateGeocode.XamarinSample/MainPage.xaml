@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="WibciCountryStateGeocode.XamarinSample.MainPage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d">
+
+	<StackLayout>
+		<Label Text="Latitude" />
+		<Entry Text="{Binding Latitude}" />
+		<Label Text="Longitude" />
+		<Entry Text="{Binding Longitude}" />
+		<Button Command="{Binding GeocodeCommand}" Text="Get" />
+
+		<Label Text="Country Result" />
+		<Label FontSize="22"
+		       HorizontalOptions="Center"
+		       Text="{Binding CountryResult}" />
+		<Label Text="State Result" />
+		<Label FontSize="22"
+		       HorizontalOptions="Center"
+		       Text="{Binding StateResult}" />
+	</StackLayout>
+
+</ContentPage>
