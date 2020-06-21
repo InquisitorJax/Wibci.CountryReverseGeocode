@@ -117,10 +117,10 @@ namespace Wibci.CountryReverseGeocode.Tests
             //California 
 
             //Arrange
-            GeoLocation alabama = new GeoLocation { Longitude = -122.4404, Latitude = 37.78595 };
+            GeoLocation california = new GeoLocation { Longitude = -122.4404, Latitude = 37.78595 };
 
             //Act
-            var info = _service.FindUsaState(alabama);
+            var info = _service.FindUsaState(california);
 
             //Assert
             Assert.NotNull(info, "Expected to find area information");
