@@ -149,15 +149,14 @@ namespace Wibci.CountryReverseGeocode.Tests
         }
 
         [Test]
-        [Ignore("Figure a way to get currency from country")]
         public void TestCultures()
         {
             //Arrange
-            //Buco Zau -4.895250, 12.437329
-            GeoLocation angola = new GeoLocation { Longitude = 12.437329, Latitude = -4.895250 };
+            //35.227575, 65.167173
+            GeoLocation afghanistan = new GeoLocation { Longitude = 65.167173, Latitude = 35.227575 };
 
             //Act
-            var info = _service.FindCountry(angola);
+            var info = _service.FindCountry(afghanistan);
 
             var regions = CultureInfo.GetCultures(CultureTypes.SpecificCultures).Select(x => new RegionInfo(x.LCID)).OrderBy(y => y.ThreeLetterISORegionName);
 
@@ -166,7 +165,10 @@ namespace Wibci.CountryReverseGeocode.Tests
                 Debug.WriteLine(region.ThreeLetterISORegionName);
             }
 
-            var currencySymbol = regions.FirstOrDefault(x => x.ThreeLetterISORegionName == info.Id);
+            var countryRegion = regions.FirstOrDefault(x => x.ThreeLetterISORegionName == info.Id);
+
+            Assert.IsNotNull(countryRegion, "Expected to find the currency symbol");
+            Assert.AreEqual(countryRegion.ISOCurrencySymbol, info.CurrencySymbol, "Expected the correct currency symbol");
         }
     }
 }

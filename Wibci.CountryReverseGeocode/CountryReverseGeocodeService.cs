@@ -1,7 +1,9 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json;
 using System.Collections.Generic;
 using Wibci.CountryReverseGeocode.Data;
 using Wibci.CountryReverseGeocode.Models;
+using System.Globalization;
+using System.Linq;
 
 namespace Wibci.CountryReverseGeocode
 {
@@ -26,25 +28,30 @@ namespace Wibci.CountryReverseGeocode
             return FindAreaData(location, UsaStateData.DATA);
         }
 
-        //TODO: Check again if exposed via .NET Standard
-        //private string FetchCurrencySymbol(string threeLetterISO)
-        //{
-        //    string currencySymbol = null;
+		private string FetchCurrencySymbol(string threeLetterISO)
+		{
+			string currencySymbol = null;
 
-        //    var regions = CultureInfo.GetCultures(CultureTypes.SpecificCultures).Select(x => new RegionInfo(x.LCID));
+			var regions = CultureInfo.GetCultures(CultureTypes.SpecificCultures).Select(x => new RegionInfo(x.LCID)).ToList();
+            var region = regions.FirstOrDefault(r => r.ThreeLetterISORegionName == threeLetterISO);
+            if (region != null)
+			{
+                currencySymbol = region.ISOCurrencySymbol;
+			}
 
-        //    return currencySymbol;
-        //}
+			return currencySymbol;
+		}
 
-        private LocationInfo FindAreaData(GeoLocation location, List<string> jsonDataList)
+		private LocationInfo FindAreaData(GeoLocation location, List<string> jsonDataList)
         {
             LocationInfo retInfo = null;
             foreach (string area in jsonDataList)
             {
+                string jsonArea = area.Replace('\'', '"');
                 bool isMultiPolygon = area.Contains("MultiPolygon");
                 if (isMultiPolygon)
                 {
-                    var stateData = JsonConvert.DeserializeObject<MultiPolygonData>(area);
+                    var stateData = JsonSerializer.Deserialize<MultiPolygonData>(jsonArea);
 
                     foreach (var item in stateData.geometry.coordinates)
                     {
@@ -55,7 +62,7 @@ namespace Wibci.CountryReverseGeocode
                 }
                 else
                 {
-                    var stateData = JsonConvert.DeserializeObject<PolygonData>(area);
+                    var stateData = JsonSerializer.Deserialize<PolygonData>(jsonArea);
 
                     retInfo = FindLocationInfo(location, stateData, stateData.geometry.coordinates);
                     if (retInfo != null)
@@ -82,8 +89,8 @@ namespace Wibci.CountryReverseGeocode
 
             if (found)
             {
-                //string currencySymbol = FetchCurrencySymbol(data.id);
-                retInfo = new LocationInfo(data.id, data.properties.name);
+                string currencySymbol = FetchCurrencySymbol(data.id);
+                retInfo = new LocationInfo(data.id, data.properties.name) { CurrencySymbol = currencySymbol };
             }
 
             return retInfo;
