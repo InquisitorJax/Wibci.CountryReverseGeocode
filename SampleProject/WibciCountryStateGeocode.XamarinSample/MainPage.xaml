@@ -6,7 +6,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d">
 
-	<StackLayout>
+	<StackLayout Margin="16">
 		<Label Text="Latitude" />
 		<Entry Text="{Binding Latitude}" />
 		<Label Text="Longitude" />
