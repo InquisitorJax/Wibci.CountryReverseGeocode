@@ -1,5 +1,4 @@
-﻿using Newtonsoft.Json;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Wibci.CountryReverseGeocode.Data;
 using Wibci.CountryReverseGeocode.Models;
 
@@ -36,46 +35,30 @@ namespace Wibci.CountryReverseGeocode
         //    return currencySymbol;
         //}
 
-        private LocationInfo FindAreaData(GeoLocation location, List<string> jsonDataList)
+        private LocationInfo FindAreaData(GeoLocation location, List<AreaData> areaDataList)
         {
             LocationInfo retInfo = null;
-            foreach (string area in jsonDataList)
+            foreach (var areaData in areaDataList)
             {
-                bool isMultiPolygon = area.Contains("MultiPolygon");
-                if (isMultiPolygon)
+                foreach (var polygonData in areaData.geometry.coordinates)
                 {
-                    var stateData = JsonConvert.DeserializeObject<MultiPolygonData>(area);
-
-                    foreach (var item in stateData.geometry.coordinates)
-                    {
-                        retInfo = FindLocationInfo(location, stateData, item);
-                        if (retInfo != null)
-                            return retInfo;
-                    }
-                }
-                else
-                {
-                    var stateData = JsonConvert.DeserializeObject<PolygonData>(area);
-
-                    retInfo = FindLocationInfo(location, stateData, stateData.geometry.coordinates);
-                    if (retInfo != null)
-                        return retInfo;
+                    retInfo = FindLocationInfo(location, areaData, polygonData);
+                    if (retInfo != null) return retInfo;
                 }
             }
 
             return retInfo;
         }
 
-        private LocationInfo FindLocationInfo(GeoLocation location, AreaData data, List<List<List<double>>> coordinates)
+        private LocationInfo FindLocationInfo(GeoLocation location, AreaData data, (double longitude, double latitude)[] coordinates)
         {
             LocationInfo retInfo = null;
 
             List<GeoLocation> locations = new List<GeoLocation>();
 
-            var locationData = coordinates[0];
-            foreach (var locationItem in locationData)
+            foreach (var coordinate in coordinates)
             {
-                locations.Add(new GeoLocation { Latitude = locationItem[1], Longitude = locationItem[0] });
+                locations.Add(new GeoLocation { Latitude = coordinate.latitude, Longitude = coordinate.longitude });
             }
 
             bool found = location.IsInPolygon(locations);
@@ -83,7 +66,7 @@ namespace Wibci.CountryReverseGeocode
             if (found)
             {
                 //string currencySymbol = FetchCurrencySymbol(data.id);
-                retInfo = new LocationInfo(data.id, data.properties.name);
+                retInfo = new LocationInfo(data.id, data.name);
             }
 
             return retInfo;
