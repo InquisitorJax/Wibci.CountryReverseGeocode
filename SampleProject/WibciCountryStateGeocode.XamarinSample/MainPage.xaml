@@ -17,6 +17,9 @@
 		<Label FontSize="22"
 		       HorizontalOptions="Center"
 		       Text="{Binding CountryResult}" />
+		<Label FontSize="18"
+		       HorizontalOptions="Center"
+		       Text="{Binding Currency}" />
 		<Label Text="State Result" />
 		<Label FontSize="22"
 		       HorizontalOptions="Center"

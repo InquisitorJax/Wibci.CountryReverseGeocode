@@ -17,6 +17,9 @@ namespace WibciCountryStateGeocode.XamarinSample
         {
             GeocodeCommand = new DelegateCommand(Geocode);
             _geocodeService = new CountryReverseGeocodeService();
+
+            Latitude = "35.227575";
+            Longitude = "65.167173";
         }
 
         public string CountryResult
@@ -43,6 +46,13 @@ namespace WibciCountryStateGeocode.XamarinSample
 			set { SetProperty(ref _longitude, value); }
 		}
 
+		private string _currency;
+
+		public string Currency
+		{
+			get { return _currency; }
+			set { SetProperty(ref _currency, value); }
+		}
 
 		public string StateResult
         {
@@ -62,8 +72,9 @@ namespace WibciCountryStateGeocode.XamarinSample
                 var countryResult = _geocodeService.FindCountry(location);
                 var stateResult = _geocodeService.FindUsaState(location);
 
-                CountryResult = countryResult?.Name ?? "Error";
-                StateResult = stateResult?.Name ?? "Error";
+                CountryResult = countryResult?.Name ?? "N/A";
+                Currency = countryResult?.CurrencySymbol ?? "N/A";
+                StateResult = stateResult?.Name ?? "N/A";
             }
         }
     }
