@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Wibci.CountryReverseGeocode.DataConversion": {
+      "commandName": "Project",
+      "commandLineArgs": "../../../../resources/countries.json ../../../../resources/gz_2010_us_040_00_20m.json ../../../../resources/gz_2010_us_040_00_5m.json ../../../../resources/gz_2010_us_040_00_500k.json"
+    }
+  }
+}
