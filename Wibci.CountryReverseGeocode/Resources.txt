@@ -1,1 +1,11 @@
 ﻿USA State Data https://eric.clst.org/tech/usgeojson/
+
+country data from: https://github.com/totemstech/country-reverse-geocoding/blob/master/lib/country_reverse_geocoding.js
+TODO: more accurate data from https://gist.github.com/neilkennedy/6423661 
+or https://raw.githubusercontent.com/datasets/geo-boundaries-world-110m/master/countries.geojson
+
+Test data with US cities and long/lat/state:
+https://www.w3.org/2003/01/geo/test/ustowns/latlong.htm
+
+Test data for World capitals:
+https://lab.lmnixon.org/4th/worldcapitals.html
