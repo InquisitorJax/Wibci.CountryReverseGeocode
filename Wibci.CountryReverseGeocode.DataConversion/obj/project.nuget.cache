@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "oH97vltporDo0QL1MxhtAxI6nY0fq6l/eYT5JmMcZZr3Pf3E26xiWzNE4YdrZt58r6HBIMkrB//rd7m8xM4C9A==",
+  "success": true,
+  "projectFilePath": "C:\\DEV\\Git\\Wibci.CountryReverseGeocode\\Wibci.CountryReverseGeocode.DataConversion\\Wibci.CountryReverseGeocode.DataConversion.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\inqui\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
